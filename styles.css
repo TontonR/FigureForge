@@ -1,0 +1,224 @@
+/* Colores y estilos base se mantienen */
+:root {
+  --color-header: #3498db;
+  --color-nav-search-bg: #e67e22;
+  --color-nav-bg: #e74c3c;
+  --color-search-bg: #f5b7b1;
+  --color-aside: #e91e63;
+  --color-main-bg: #f9e79f;
+  --color-grid-item-bg: #9b59b6;
+  --color-name-bg: #ffffff;
+  --color-footer: #f1c40f;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 1. HEADER y 2. NAV/BUSCADOR (Sin cambios significativos) */
+.main-header,
+.nav-search-container,
+.main-footer {
+  flex-shrink: 0; /* Evita que estos elementos se encojan */
+}
+
+.main-header {
+  background-color: var(--color-header);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+.main-header h1 {
+  font-size: 1.5em;
+}
+
+.nav-search-container {
+  background-color: var(--color-nav-search-bg);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* Estilos de nav y buscador omitidos por brevedad */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+.main-nav li a {
+  background-color: var(--color-nav-bg);
+  color: white;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: block;
+}
+.buscador {
+  background-color: var(--color-search-bg);
+  padding: 8px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* 3. CONTENT CONTAINER (Aside + Main) - CRUCIAL PARA EL SCROLL */
+.content-container {
+  display: flex;
+  flex-grow: 1; /* Ocupa el espacio restante en el body */
+  background-color: var(--color-main-bg);
+  padding: 10px; /* Padding interno */
+  overflow: hidden; /* Previene el desbordamiento del contenedor principal */
+}
+
+/* Aside - 15% de ancho */
+.main-aside {
+  background-color: var(--color-aside);
+  width: 15%; /* Aside más estrecho */
+  min-width: 100px;
+  padding: 20px;
+  color: white;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Main Content - CON SCROLL DEFINIDO */
+.main-content {
+  flex-grow: 1;
+  padding: 0 10px; /* Padding ajustado */
+
+  /* ESTAS 2 LÍNEAS ACTIVAN EL SCROLL DENTRO DEL CONTENEDOR FLEXIBLE */
+  overflow-y: auto; /* La barra de desplazamiento aparece si el contenido excede el espacio vertical */
+}
+
+/* Rejilla de elementos */
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  padding: 5px;
+  /* IMPORTANTE: No hay altura fija aquí, la rejilla crece con el contenido */
+}
+
+.grid-item {
+  background-color: var(--color-grid-item-bg);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 3px solid var(--color-nav-search-bg);
+  /* Altura no fija, el contenido (Button y Name) define la altura mínima */
+}
+
+/* Enlace/Botón de Producto (Ahora clicable y con altura flexible) */
+.item-button {
+  background-color: var(--color-grid-item-bg);
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  font-size: 1em;
+
+  /* Mantenemos una altura mínima y máxima para que los botones tengan un rango de tamaño */
+  min-height: 100px; /* Altura mínima para que no sea un botón diminuto */
+  max-height: 150px; /* Altura máxima razonable */
+
+  flex-grow: 1; /* Ocupa el espacio restante */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s; /* Efecto suave de hover (opcional) */
+}
+
+.item-button:hover {
+  background-color: #8e44ad; /* Color morado ligeramente más oscuro al pasar el ratón */
+}
+
+.item-name {
+  background-color: var(--color-name-bg);
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  color: #333;
+  flex-shrink: 0;
+}
+
+/* 4. FOOTER (Sin cambios) */
+.main-footer {
+  background-color: var(--color-footer);
+  padding: 20px;
+  text-align: center;
+}
+
+/* --- MEDIA QUERIES PARA RESPONSIVIDAD (Se mantienen igual) --- */
+
+/* La lógica de columnas (6->5->4->3->2->1) y el apilamiento de aside/main se mantiene. */
+
+@media (max-width: 1200px) {
+  .items-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .items-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .main-aside {
+    width: 20%;
+  }
+}
+
+@media (max-width: 768px) {
+  .items-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .main-aside {
+    width: 25%;
+  }
+  .nav-search-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .main-nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 576px) {
+  .content-container {
+    flex-direction: column;
+  }
+  .main-aside {
+    width: 100%;
+    min-height: 100px;
+  }
+  .main-content {
+    /* Altura máxima cuando el contenido está apilado, garantiza el scroll */
+    max-height: 400px;
+  }
+  .items-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .items-grid {
+    grid-template-columns: 1fr;
+  }
+}

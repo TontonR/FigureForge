@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página Principal</title>
+    <style>
+      :root {
+        --color-header: #3498db;
+        --color-nav-search-bg: #e67e22;
+        --color-nav-bg: #e74c3c;
+        --color-search-bg: #f5b7b1;
+        --color-aside: #e91e63;
+        --color-main-bg: #f9e79f;
+        --color-grid-item-bg: #9b59b6;
+        --color-name-bg: #ffffff;
+        --color-footer: #f1c40f;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      /* HEADER */
+      .main-header {
+        background-color: var(--color-header);
+        color: white;
+        padding: 20px;
+        text-align: center;
+        flex-shrink: 0;
+      }
+      .main-header h1 {
+        font-size: 1.5em;
+      }
+
+      /* NAV Y BUSCADOR */
+      .nav-search-container {
+        background-color: var(--color-nav-search-bg);
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-shrink: 0;
+        gap: 15px;
+      }
+
+      .main-nav ul {
+        list-style: none;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .main-nav li a {
+        background-color: var(--color-nav-bg);
+        color: white;
+        padding: 8px 15px;
+        text-decoration: none;
+        border-radius: 5px;
+        display: block;
+        transition: background-color 0.2s;
+      }
+
+      .main-nav li a:hover {
+        background-color: #c0392b;
+      }
+
+      .buscador {
+        background-color: var(--color-search-bg);
+        padding: 8px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .buscador input {
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+      }
+
+      .buscador button {
+        padding: 5px 15px;
+        border: none;
+        border-radius: 3px;
+        background-color: var(--color-nav-bg);
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      .buscador button:hover {
+        background-color: #c0392b;
+      }
+
+      /* CONTENT CONTAINER */
+      .content-container {
+        display: flex;
+        flex-grow: 1;
+        background-color: var(--color-main-bg);
+        padding: 10px;
+        overflow: hidden;
+        gap: 10px;
+      }
+
+      /* ASIDE */
+      .main-aside {
+        background-color: var(--color-aside);
+        width: 15%;
+        min-width: 100px;
+        padding: 20px;
+        color: white;
+        font-size: 1.2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        margin-left: -10px;
+        margin-top: -10px;
+        margin-bottom: -10px;
+        padding-left: 30px;
+      }
+
+      /* MAIN CONTENT */
+      .main-content {
+        flex-grow: 1;
+        overflow-y: auto;
+        padding: 0 5px;
+      }
+
+      /* GRID DE PRODUCTOS - Sistema responsive con límites MIN y MAX robustos */
+      .items-grid {
+        display: grid;
+        /* 
+    VALORES AJUSTABLES:
+    - minmax controla el rango de tamaño de cada producto
+    - Cuando un producto llega al MÍNIMO, baja a la siguiente fila
+  */
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 10px;
+        padding: 5px;
+      }
+
+      .grid-item {
+        background-color: var(--color-grid-item-bg);
+        border-radius: 10px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        border: 3px solid var(--color-nav-search-bg);
+        /* 
+    TAMAÑOS DEL PRODUCTO:
+    - min-width: Ancho MÍNIMO absoluto (240px)
+    - max-width: Ancho MÁXIMO absoluto (350px)
+    
+    AJUSTA ESTOS VALORES:
+    - Para productos más grandes: aumenta ambos valores proporcionalmente
+    - Para productos más pequeños: disminuye ambos valores proporcionalmente
+    - El rango (máx - mín) determina cuánto pueden crecer/encogerse
+  */
+        min-width: 240px;
+        max-width: 350px;
+
+        /* 
+    RATIO DEL PRODUCTO:
+    aspect-ratio: 4/5 significa que la altura es 1.25 veces el ancho
+    Para productos más altos: aumenta el segundo número (ej: 4/6, 4/7)
+    Para productos más anchos: aumenta el primer número (ej: 5/5, 6/5)
+  */
+        aspect-ratio: 4/5;
+        overflow: hidden;
+      }
+
+      /* BOTÓN DE PRODUCTO - Tamaño consistente */
+      .item-button {
+        background-color: var(--color-grid-item-bg);
+        color: white;
+        text-decoration: none;
+        border: none;
+        font-size: 1em;
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.2s;
+        cursor: pointer;
+        min-height: 0;
+        width: 100%;
+        padding: 10px;
+      }
+
+      .item-name {
+        background-color: var(--color-name-bg);
+        text-align: center;
+        padding: 8px 5px;
+        color: #333;
+        flex-shrink: 0;
+        font-size: 0.9em;
+        width: 100%;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      /* Hacer todo el article clicable */
+      .grid-item {
+        position: relative;
+      }
+
+      .grid-item > a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+      }
+
+      .grid-item .item-button {
+        position: relative;
+        z-index: 1;
+      }
+
+      .grid-item .item-name {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Hover simultáneo para button y name */
+      .grid-item > a:hover .item-button {
+        background-color: #8e44ad;
+      }
+
+      .grid-item > a:hover .item-name {
+        background-color: #f0f0f0;
+      }
+
+      /* FOOTER */
+      .main-footer {
+        background-color: var(--color-footer);
+        padding: 20px;
+        text-align: center;
+        flex-shrink: 0;
+      }
+
+      /* MEDIA QUERIES PARA RESPONSIVIDAD */
+
+      @media (max-width: 1200px) {
+        .items-grid {
+          grid-template-columns: repeat(5, 1fr);
+        }
+      }
+
+      @media (max-width: 992px) {
+        .items-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+        .main-aside {
+          width: 20%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .items-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .main-aside {
+          width: 25%;
+        }
+        .nav-search-container {
+          flex-direction: column;
+          gap: 10px;
+        }
+        .main-nav ul {
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .content-container {
+          flex-direction: column;
+        }
+        .main-aside {
+          width: 100%;
+          min-height: 80px;
+        }
+        .main-content {
+          max-height: 500px;
+        }
+        .items-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 400px) {
+        .items-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <h1>Header</h1>
+    </header>
+
+    <div class="nav-search-container">
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Sobre Nosaltres</a></li>
+          <li><a href="#">Novetats</a></li>
+          <li><a href="#">Contactar</a></li>
+        </ul>
+      </nav>
+      <div class="buscador">
+        <label for="search" style="color: #333">Nav</label>
+        <input type="search" id="search" placeholder="Buscador" />
+        <button type="button">Buscar</button>
+      </div>
+    </div>
+
+    <div class="content-container">
+      <aside class="main-aside">
+        <p>Aside</p>
+      </aside>
+
+      <main class="main-content">
+        <div class="items-grid">
+          <article class="grid-item">
+            <a href="#producto1">
+              <div class="item-button">Button</div>
+              <div class="item-name">Name</div>
+            </a>
+          </article>
+          <article class="grid-item">
+            <a href="#producto2">
+              <div class="item-button">Button</div>
+              <div class="item-name">Name</div>
+            </a>
+          </article>
+          <article class="grid-item">
+            <a href="#producto3">
+              <div class="item-button">Button</div>
+              <div class="item-name">Name</div>
+            </a>
+          </article>
+          <article class="grid-item">
+            <a href="#producto4">
+              <div class="item-button">Button</div>
+              <div class="item-name">Name</div>
+            </a>
+          </article>
+          <article class="grid-item">
+            <a href="#producto5">
+              <div class="item-button">Button</div>
+              <div class="item-name">Name</div>
+            </a>
+          </article>
+          <article class="grid-item">
+            <a href="#producto6">
+              <div class="item-button">Button</div>
+              <div class="item-name">Name</div>
+            </a>
+          </article>
+          <article class="grid-item">
+            <a href="#producto7">
+              <div class="item-button">Button</div>
+              <div class="item-name">Name</div>
+            </a>
+          </article>
+          <article class="grid-item">
+            <a href="#producto8">
+              <div class="item-button">Button</div>
+              <div class="item-name">Name</div>
+            </a>
+          </article>
+          <article class="grid-item">
+            <a href="#producto9">
+              <div class="item-button">Button</div>
+              <div class="item-name">Name</div>
+            </a>
+          </article>
+          <article class="grid-item">
+            <a href="#producto10">
+              <div class="item-button">Button</div>
+              <div class="item-name">Name</div>
+            </a>
+          </article>
+          <article class="grid-item">
+            <a href="#producto11">
+              <div class="item-button">Button</div>
+              <div class="item-name">Name</div>
+            </a>
+          </article>
+          <article class="grid-item">
+            <a href="#producto12">
+              <div class="item-button">Button</div>
+              <div class="item-name">Name</div>
+            </a>
+          </article>
+          <article class="grid-item">
+            <a href="#producto13">
+              <div class="item-button">Button</div>
+              <div class="item-name">Name</div>
+            </a>
+          </article>
+          <article class="grid-item">
+            <a href="#producto14">
+              <div class="item-button">Button</div>
+              <div class="item-name">Name</div>
+            </a>
+          </article>
+          <article class="grid-item">
+            <a href="#producto15">
+              <div class="item-button">Button</div>
+              <div class="item-name">Name</div>
+            </a>
+          </article>
+          <article class="grid-item">
+            <a href="#producto16">
+              <div class="item-button">Button</div>
+              <div class="item-name">Name</div>
+            </a>
+          </article>
+          <article class="grid-item">
+            <a href="#producto17">
+              <div class="item-button">Button</div>
+              <div class="item-name">Name</div>
+            </a>
+          </article>
+          <article class="grid-item">
+            <a href="#producto18">
+              <div class="item-button">Button</div>
+              <div class="item-name">Name</div>
+            </a>
+          </article>
+        </div>
+      </main>
+    </div>
+
+    <footer class="main-footer">
+      <p>Footer</p>
+    </footer>
+  </body>
+</html>
