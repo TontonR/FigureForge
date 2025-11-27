@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página Principal</title>
+    <style>
+      .contingut-main-producte {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+      div.imatge_producte {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <h1>Header</h1>
+    </header>
+
+    <div class="nav-search-container">
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Sobre Nosaltres</a></li>
+          <li><a href="#">Novetats</a></li>
+          <li><a href="#">Contactar</a></li>
+        </ul>
+      </nav>
+      <div class="buscador">
+        <label for="search" style="color: #333">Nav</label>
+        <input type="search" id="search" placeholder="Buscador" />
+        <button type="button">Buscar</button>
+      </div>
+    </div>
+
+    <main class="contingut-main-producte">
+      <section>
+        <div class="imatge_producte">
+          <img src="goku.jpg" />
+        </div>
+        <div>
+          <button>Comprar</button>
+        </div>
+      </section>
+      <section></section>
+    </main>
+
+    <footer class="main-footer">
+      <p>Footer</p>
+    </footer>
+  </body>
+</html>
