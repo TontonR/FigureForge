@@ -6,55 +6,73 @@
     <title>Página Principal</title>
     <link rel="stylesheet" href="../estils.css" />
     <style>
-      /* Estilos existentes */
       .contingut-main-producte {
         display: flex;
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        min-height: 80vh;
         margin: 10px;
-        margin-left: 30px;
         padding: 0;
-        flex-wrap: wrap;
+        gap: 20px;
       }
 
-      div.imatge_producte {
-        width: 350px;
-        height: 600px;
-        border: 1px solid black;
+      /* Primer section*/
+      .contingut-main-producte section.imatge_producte {
+        flex: 1; /* 1 parte */
+        display: flex;
+        flex-direction: column;
         align-items: center;
+        padding: 20px;
+        margin: 10px;
+        margin-right: 0;
+        box-sizing: border-box;
+      }
+
+      .imatge_producte .img-container {
+        width: 100%;
+        height: 100%;
+        border: 1px solid black;
         display: flex;
         justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
       }
-      .imatge_producte img {
+
+      .img-container img {
         max-width: 100%;
         max-height: 100%;
-        height: auto;
+      }
+
+      /* Segundo section: texto — ocupa 70% */
+      .contingut-main-producte section.info_producte {
+        flex: 2; /* este "cuenta como 2" */
+        padding: 20px;
+        margin: 10px;
+        margin-left: 0;
+        margin-right: 30px;
+        box-sizing: border-box;
+      }
+
+      .boton-comprar div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .boton-comprar button {
+        background: green;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
         display: block;
       }
 
-      .contingut-main-producte section:first-child {
-        background-color: red;
-        width: 20%;
-        padding: 20px;
-        box-sizing: border-box;
+      .boton-comprar button:hover {
+        background: rgb(0, 90, 0);
       }
-
-      .contingut-main-producte section:last-child {
-        background-color: blue;
-        width: 70%;
-        padding: 20px;
-        box-sizing: border-box;
-      }
-
-      /** Comportamiento responsivo: apilamiento en pantallas pequeñas (menos de 768px)
-      @media (max-width: 768px) {
-        .contingut-main-producte section:first-child,
-        .contingut-main-producte section:last-child {
-          width: 100%;
-          min-height: 50vh;
-        }
-      }
-      **/
     </style>
   </head>
   <body>
@@ -79,17 +97,49 @@
     </div>
 
     <main class="contingut-main-producte">
-      <section>
-        <div class="imatge_producte">
+      <section class="imatge_producte">
+        <div class="img-container">
           <img src="goku.jpg" />
         </div>
-        <div>
+        <div class="boton-comprar">
           <button>Comprar</button>
         </div>
       </section>
-      <section>
+      <section class="info_producte">
         <h1>Goku Superguerrer</h1>
         <h3>50€</h3>
+        <p>
+          Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
+          Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
+          Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
+          Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
+          Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
+          Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
+          Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
+          Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
+          Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
+          Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
+          Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
+          Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
+        </p>
+        <table>
+          <tr>
+            <td>Caracteristiques</td>
+            <td>Goku</td>
+          </tr>
+          <tr>
+            <td>Mida</td>
+            <td>30cmx50cmx30cm</td>
+          </tr>
+          <tr>
+            <td>Material</td>
+            <td>Plàstic</td>
+          </tr>
+          <tr>
+            <td>Articulable</td>
+            <td>No</td>
+          </tr>
+        </table>
       </section>
     </main>
 
