@@ -8,16 +8,14 @@
     <style>
       .contingut-main-producte {
         display: flex;
-        width: 100%;
         min-height: 80vh;
-        margin: 10px;
         padding: 20px;
-        padding-left: 150px;
-        padding-right: 150px;
+        padding-left: 100px;
+        padding-right: 100px;
         gap: 20px;
-      }
-
-      /* Primer section*/
+        max-width: 1700px;
+        margin: 0 auto;
+      } /* Primer section*/
       .contingut-main-producte section.imatge_producte {
         flex: 1; /* 1 parte */
         display: flex;
@@ -28,7 +26,6 @@
         margin-right: 0;
         box-sizing: border-box;
       }
-
       .imatge_producte .img-container {
         width: 100%;
         height: 100%;
@@ -37,14 +34,13 @@
         justify-content: center;
         align-items: center;
         margin-bottom: 10px;
+        padding: 15px;
       }
-
       .img-container img {
         max-width: 100%;
         max-height: 100%;
-      }
-
-      /* Segundo section: texto — ocupa 70% */
+        object-fit: contain;
+      } /* Segundo section: texto — ocupa 70% */
       .contingut-main-producte section.info_producte {
         flex: 2; /* este "cuenta como 2" */
         padding: 20px;
@@ -52,15 +48,14 @@
         margin-left: 0;
         margin-right: 30px;
         box-sizing: border-box;
+        height: auto;
       }
-
       .boton-comprar div {
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
       }
-
       .boton-comprar button {
         background: green;
         color: white;
@@ -70,8 +65,8 @@
         cursor: pointer;
         width: 100%;
         display: block;
+        margin-top: 20px;
       }
-
       .boton-comprar button:hover {
         background: rgb(0, 90, 0);
       }
@@ -80,42 +75,66 @@
         border-collapse: collapse;
         margin-top: 20px;
       }
-
-      table th,
+      table td,
+      table th {
+        border: 1px solid #ddd;
+      }
       table td {
         border: 1px solid #ddd;
         padding: 8px;
         text-align: left;
       }
-
       table th {
         background-color: #f4f4f4;
         font-weight: bold;
       }
-
       table tr:nth-child(even) {
         background-color: #f9f9f9;
       }
-
       table tr:hover {
         background-color: #eaeaea;
       }
-
       .info_producte h1 {
         text-align: left;
         margin-top: 0px;
       }
-
       .info_producte h2 {
         text-align: left;
+      }
+      .info_producte p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: #333;
+        margin-bottom: 15px;
+        max-width: 750px; /* Mantiene líneas cortas y más agradables */
+        text-align: justify; /* Queda uniforme en textos descriptivos */
+      }
+      .info_producte p + p {
+        margin-top: 8px; /* Separación entre párrafos */
+      }
+      .fabricant {
+        margin-top: -8px;
+        margin-bottom: 15px;
+      }
+      .fabricant a {
+        font-size: 0.9rem;
+        color: #666;
+        text-decoration: none;
+      }
+      .fabricant a:hover {
+        color: #333;
+        text-decoration: underline;
+      }
+      .preu {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #1a1a1a;
+        margin-bottom: 15px;
       }
     </style>
   </head>
   <body>
-    <header class="main-header">
-      <h1>Header</h1>
-    </header>
-
+    <header class="main-header"><h1>Header</h1></header>
     <div class="nav-search-container">
       <nav class="main-nav">
         <ul>
@@ -131,64 +150,63 @@
         <button type="button">Buscar</button>
       </div>
     </div>
-
     <main class="contingut-main-producte">
       <section class="imatge_producte">
-        <div class="img-container">
-          <img src="goku.jpg" />
-        </div>
+        <div class="img-container"><img src="goku.jpg" /></div>
       </section>
       <section class="info_producte">
-        <h1>Goku Superguerrer</h1>
-        <h3>50€</h3>
-        <br />
+        <h1>Goku Superguerrer de l'espai - 50€</h1>
+        <p class="fabricant"><a href="#">Banpresto · SCultures BIG</a></p>
+        <!--<h3 class="preu">Preu: 50€</h3>-->
         <p>
-          Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
-          Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
-          Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
-          Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
-          Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
-          Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
-          Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
-          Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
-          Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
-          Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
-          Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
-          Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
+          Aquesta figura de Goku Superguerrer, pertanyent a la prestigiosa línia
+          SCultures de Banpresto, destaca per la seva pose d’atac plena de
+          dinamisme i força, així com pel detallat treball de modelatge en el
+          cabell, la roba i l’expressió facial. La pintura presenta tons vius i
+          ombrejats que aporten volum i reforcen la musculatura, mentre que la
+          base inclosa garanteix estabilitat i una presentació atractiva. És una
+          peça ideal tant per a col·leccionistes de Dragon Ball com per a
+          aficionats que busquen una figura impactant per exhibir.
         </p>
-        <br />
         <h2>Caracteristiques</h2>
         <table>
           <tr>
-            <td>Mida</td>
-            <td>30cm x 50cm x 30cm</td>
+            <td>Alçada</td>
+            <td>23 cm</td>
           </tr>
           <tr>
             <td>Material</td>
-            <td>Plàstic</td>
+            <td>PVC i ABS</td>
           </tr>
           <tr>
             <td>Pes</td>
-            <td>200g</td>
+            <td>250 g</td>
           </tr>
           <tr>
-            <td>Articulable</td>
-            <td>No</td>
+            <td>Articulacions</td>
+            <td>No, figura estàtica</td>
           </tr>
           <tr>
-            <td>Suport</td>
+            <td>Base inclosa</td>
             <td>Sí</td>
+          </tr>
+          <tr>
+            <td>Sèrie</td>
+            <td>SCultures BIG – Tenkaichi Budoukai</td>
+          </tr>
+          <tr>
+            <td>Fabricant</td>
+            <td>Banpresto</td>
+          </tr>
+          <tr>
+            <td>Any de llançament</td>
+            <td>2015</td>
           </tr>
         </table>
         <br />
-        <div class="boton-comprar">
-          <button>Comprar</button>
-        </div>
+        <div class="boton-comprar"><button>Comprar</button></div>
       </section>
     </main>
-
-    <footer class="main-footer">
-      <p>Footer</p>
-    </footer>
+    <footer class="main-footer"><p>Footer</p></footer>
   </body>
 </html>
