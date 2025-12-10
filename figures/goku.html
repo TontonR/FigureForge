@@ -11,7 +11,9 @@
         width: 100%;
         min-height: 80vh;
         margin: 10px;
-        padding: 0;
+        padding: 20px;
+        padding-left: 150px;
+        padding-right: 150px;
         gap: 20px;
       }
 
@@ -73,6 +75,40 @@
       .boton-comprar button:hover {
         background: rgb(0, 90, 0);
       }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      table th,
+      table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      table th {
+        background-color: #f4f4f4;
+        font-weight: bold;
+      }
+
+      table tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      table tr:hover {
+        background-color: #eaeaea;
+      }
+
+      .info_producte h1 {
+        text-align: left;
+        margin-top: 0px;
+      }
+
+      .info_producte h2 {
+        text-align: left;
+      }
     </style>
   </head>
   <body>
@@ -101,13 +137,11 @@
         <div class="img-container">
           <img src="goku.jpg" />
         </div>
-        <div class="boton-comprar">
-          <button>Comprar</button>
-        </div>
       </section>
       <section class="info_producte">
         <h1>Goku Superguerrer</h1>
         <h3>50€</h3>
+        <br />
         <p>
           Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
           Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
@@ -122,24 +156,34 @@
           Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
           Descripcio Descripcio Descripcio Descripcio Descripcio Descripcio
         </p>
+        <br />
+        <h2>Caracteristiques</h2>
         <table>
           <tr>
-            <td>Caracteristiques</td>
-            <td>Goku</td>
-          </tr>
-          <tr>
             <td>Mida</td>
-            <td>30cmx50cmx30cm</td>
+            <td>30cm x 50cm x 30cm</td>
           </tr>
           <tr>
             <td>Material</td>
             <td>Plàstic</td>
           </tr>
           <tr>
+            <td>Pes</td>
+            <td>200g</td>
+          </tr>
+          <tr>
             <td>Articulable</td>
             <td>No</td>
           </tr>
+          <tr>
+            <td>Suport</td>
+            <td>Sí</td>
+          </tr>
         </table>
+        <br />
+        <div class="boton-comprar">
+          <button>Comprar</button>
+        </div>
       </section>
     </main>
 
