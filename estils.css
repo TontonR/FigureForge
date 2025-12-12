@@ -412,14 +412,17 @@ h2 {
   }
 
   .contingut-main-producte section.imatge_producte,
-  .info_producte {
-    flex: none;
+  .imatge_producte .img-container {
+    height: 500px;
     width: 100%;
-    margin: 10px 0;
+    max-width: 600px;
+    padding: 20px;
+    margin: 0 auto;
   }
 
-  .imatge_producte .img-container {
-    height: auto;
-    max-height: 400px;
+  .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 }
