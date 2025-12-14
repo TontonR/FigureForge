@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Goku Superguerrer</title>
+    <link rel="stylesheet" href="estils.css" />
+  </head>
+  <body class="producte-page">
+    <header class="capçalera">
+      <img src="FigureForgeText.png" alt="Logo Figure Forge" class="logo" />
+      <div class="nav-div">
+        <nav class="nav-nav">
+          <ul>
+            <li><a href="pagina-principal.html">Home</a></li>
+            <li><a href="tenda.html">Tenda</a></li>
+            <li><a href="contactar.html">Contactar</a></li>
+          </ul>
+        </nav>
+        <div class="buscador">
+          <input type="search" id="search" placeholder="Buscador" />
+          <button type="button">Buscar</button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <h1>Contactar</h1>
+      <form id="formulari">
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" name="nom" required />
+
+        <label for="cognoms">Cognoms:</label>
+        <input type="text" id="cognoms" name="cognoms" required />
+
+        <label for="edat">Edat:</label>
+        <input type="number" id="edat" name="edat" min="0" />
+
+        <p>Gènere:</p>
+        <div class="genere-opcions">
+          <label>
+            <input type="radio" name="genere" value="masculi" />
+            Masculí
+          </label>
+
+          <label>
+            <input type="radio" name="genere" value="femeni" />
+            Femení
+          </label>
+
+          <label>
+            <input type="radio" name="genere" value="altres" />
+            Altres
+          </label>
+        </div>
+
+        <label for="adreca">Adreça</label>
+        <input type="text" id="adreca" name="adreca" required />
+
+        <label for="email">Correu electrònic:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="telefon">Telèfon:</label>
+        <input type="tel" id="telefon" name="telefon" pattern="[0-9]{9}" />
+        <label for="motiu">Motivo de contacto:</label>
+        <select id="motiu" name="motiu">
+          <option value="">-- Selecciona una opció --</option>
+          <option value="consulta">Consulta</option>
+          <option value="compra">Compra</option>
+        </select>
+
+        <!-- Consulta -->
+        <div id="consulta-box" style="display: none">
+          <label for="consulta-text">Escriu el motiu de la consulta:</label>
+          <textarea id="consulta-text" name="consulta-text" rows="4"></textarea>
+        </div>
+
+        <!-- Compra -->
+        <div id="compra-box" style="display: none">
+          <label for="producte">Selecciona un producte:</label>
+          <select id="producte" name="producte">
+            <option value="">-- Selecciona un producte --</option>
+            <option value="goku">Figura Goku</option>
+            <option value="vegeta">Figura Vegeta</option>
+            <option value="freezer">Figura Freezer</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-enviar">Enviar</button>
+      </form>
+    </main>
+    <footer class="main-footer">
+      <div class="footer-content">
+        <div class="footer-section contact-info">
+          <h3>Figure Forge</h3>
+          <p>La forja de les teves figures de col·lecció.</p>
+          <p><i class="icon fas fa-map-marker-alt"></i> Barcelona, Catalunya</p>
+          <p><i class="icon fas fa-envelope"></i> info@figureforge.cat</p>
+        </div>
+
+        <div class="footer-section links-utils">
+          <h3>Enllaços Útils</h3>
+          <ul>
+            <li><a href="#">FAQ (Preguntes Freqüents)</a></li>
+            <li><a href="#">Política d'Enviament i Devolucions</a></li>
+            <li><a href="#">Com comprar</a></li>
+            <li><a href="#">Mapa del Lloc</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section legal-info">
+          <h3>Informació Legal</h3>
+          <ul>
+            <li><a href="#">Avís Legal</a></li>
+            <li><a href="#">Política de Privacitat</a></li>
+            <li><a href="#">Política de Cookies</a></li>
+            <li><a href="#">Termes i Condicions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section social-media">
+          <h3>Segueix-nos</h3>
+          <div class="social-icons">
+            <a href="#" target="_blank" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" target="_blank" aria-label="Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" target="_blank" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Figure Forge. Tots els drets reservats.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+<script>
+  const motiu = document.getElementById("motiu");
+  const consultaBox = document.getElementById("consulta-box");
+  const compraBox = document.getElementById("compra-box");
+  const producteSelect = document.getElementById("producte");
+
+  function actualitzarVista() {
+    consultaBox.style.display = "none";
+    compraBox.style.display = "none";
+
+    if (motiu.value === "consulta") {
+      consultaBox.style.display = "block";
+    } else if (motiu.value === "compra") {
+      compraBox.style.display = "block";
+    }
+  }
+
+  motiu.addEventListener("change", actualitzarVista);
+
+  // --- Cargar producto desde la URL ---
+  const params = new URLSearchParams(window.location.search);
+  const producteURL = params.get("producte");
+
+  if (producteURL) {
+    motiu.value = "compra";
+    actualitzarVista();
+    producteSelect.value = producteURL;
+  }
+</script>
