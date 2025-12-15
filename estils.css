@@ -1,15 +1,17 @@
+/* ========================= VARIABLES ========================= */
 :root {
   --color-header: #db3434;
   --color-nav-search-bg: #e67e22;
   --color-nav-bg: #e74c3c;
   --color-search-bg: #f5b7b1;
-  --color-aside: #e91e63;
+  --color-aside: #db3434;
   --color-main-bg: #ffddb6;
   --color-grid-item-bg: #ffffff;
   --color-name-bg: #ffffff;
   --color-footer: #ee573c;
 }
 
+/* ========================= RESET Y BASE ========================= */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -18,144 +20,112 @@
 
 body {
   font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-top: 50px;
+  padding-top: 70px;
+  position: relative;
 }
 
+/* ========================= TIPOGRAFÍA ========================= */
 h1 {
-  text-align: center;
-  margin-top: 0px;
-  margin-bottom: 5px;
   font-family: "Poppins", sans-serif;
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: #333;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #db3434;
   letter-spacing: 1px;
-  margin-bottom: 5px;
+  margin: 0 0 20px 0;
+  text-align: center;
 }
 
-main {
-  margin-top: 30px;
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #db3434;
+  text-align: center;
+  margin: 15px 0 30px;
+  letter-spacing: 0.5px;
 }
-/* === HEADER === */
-.capçalera {
-  /* Fondo único para toda la barra */
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  max-width: 900px;
+  margin: 0 auto 20px auto;
+  text-align: center;
+}
+
+/* ========================= HEADER ========================= */
+header.capçalera {
   background-color: var(--color-header);
   color: white;
   padding: 10px 20px;
-
-  /* Configuración de Flexbox para alinear el logo y el contenido derecho */
   display: flex;
-  justify-content: space-between; /* Empuja el logo a la izquierda y el contenido a la derecha */
+  justify-content: space-between;
   align-items: center;
-
   flex-shrink: 0;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
   height: 70px;
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
-.capçalera .logo {
+header.capçalera .logo {
   height: 100%;
   width: auto;
   object-fit: contain;
-  padding: 0 0;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-div {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.nav-nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.nav-nav li a {
-  /* Aquí puedes mantener el color de los enlaces si quieres un contraste (rojo) */
-  background-color: var(--color-nav-bg);
-  color: white;
-  padding: 8px 15px;
-  text-decoration: none;
-  border-radius: 5px;
-  display: block;
-  transition: background-color 0.2s;
-}
-
-.nav-nav li a:hover {
-  background-color: #c0392b;
-}
-
-.buscador {
-  /* Usamos el color de fondo para el buscador si quieres que destaque un poco (naranja claro) */
-  background-color: var(--color-search-bg);
-  padding: 8px;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.buscador input {
-  padding: 5px 10px;
-  border: none;
-  border-radius: 3px;
-}
-
-.buscador button {
-  padding: 5px 15px;
-  border: none;
-  border-radius: 3px;
-  background-color: var(--color-nav-bg);
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.buscador button:hover {
-  background-color: #c0392b;
-}
-
-.capçalera h1 {
+header.capçalera h1 {
   font-size: 1.5em;
   font-family: Arial, sans-serif;
   font-weight: normal;
+  color: white;
   margin: 0;
+  padding: 0;
   letter-spacing: 0;
+  text-align: left;
+  line-height: normal;
 }
 
-/* === NAV Y BUSCADOR === */
-.nav-search-container {
-  background-color: var(--color-nav-search-bg);
-  padding: 8px 10px;
+/* ========================= NAVEGACIÓN ========================= */
+header.capçalera .nav-div {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-shrink: 0;
-  gap: 15px;
-  position: fixed;
-  top: 55px;
-  left: 0;
-  width: 100%;
-  z-index: 999;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-nav ul {
+header.capçalera .nav-nav {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+header.capçalera .nav-nav ul {
   list-style: none;
   display: flex;
   gap: 10px;
-  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-nav li a {
+header.capçalera .nav-nav li {
+  margin: 0;
+  padding: 0;
+}
+
+header.capçalera .nav-nav li a {
   background-color: var(--color-nav-bg);
   color: white;
   padding: 8px 15px;
@@ -163,28 +133,43 @@ main {
   border-radius: 5px;
   display: block;
   transition: background-color 0.2s;
+  font-size: 14px;
+  font-weight: normal;
+  border: none;
+  margin: 0;
+  box-sizing: border-box;
+  line-height: normal;
 }
 
-.nav-nav li a:hover {
+header.capçalera .nav-nav li a:hover {
   background-color: #c0392b;
+  transform: none;
 }
 
-.buscador {
+/* ========================= BUSCADOR ========================= */
+header.capçalera .buscador {
   background-color: var(--color-search-bg);
   padding: 8px;
   border-radius: 5px;
   display: flex;
   align-items: center;
   gap: 5px;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.buscador input {
+header.capçalera .buscador input {
   padding: 5px 10px;
   border: none;
   border-radius: 3px;
+  font-size: 13px;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  line-height: normal;
 }
 
-.buscador button {
+header.capçalera .buscador button {
   padding: 5px 15px;
   border: none;
   border-radius: 3px;
@@ -192,13 +177,107 @@ main {
   color: white;
   cursor: pointer;
   transition: background-color 0.2s;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  line-height: normal;
 }
 
-.buscador button:hover {
+header.capçalera .buscador button:hover {
   background-color: #c0392b;
+  transform: none;
 }
 
-/* === LAYOUT PÁGINA PRINCIPAL === */
+/* ========================= MENÚ HAMBURGUESA ========================= */
+header.capçalera .menu-toggle {
+  display: none;
+  width: 40px;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+header.capçalera .menu-toggle span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: white;
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+  margin: 0;
+  padding: 0;
+}
+
+header.capçalera .menu-toggle span:nth-child(1) {
+  top: 0;
+}
+
+header.capçalera .menu-toggle span:nth-child(2) {
+  top: 13px;
+}
+
+header.capçalera .menu-toggle span:nth-child(3) {
+  bottom: 0;
+}
+
+header.capçalera .menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 13px;
+}
+
+header.capçalera .menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+header.capçalera .menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  bottom: 13px;
+}
+
+/* ========================= BOTONES ========================= */
+/* Botones específicos de hero y sobre nosaltres */
+.hero button,
+.sobre-nosaltres button {
+  background-color: var(--color-nav-bg);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.hero button:hover,
+.sobre-nosaltres button:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* ========================= HERO Y SOBRE NOSALTRES ========================= */
+.hero {
+  background-color: var(--color-main-bg);
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+.sobre-nosaltres {
+  background-color: #ffe6cc;
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+/* ========================= CONTENIDO PRINCIPAL ========================= */
+
 .content-container {
   display: flex;
   flex-grow: 1;
@@ -206,40 +285,100 @@ main {
   min-height: calc(100vh - 160px);
 }
 
-.filtrador {
+.contingut-main {
+  flex-grow: 1;
+  padding: 10px;
+  overflow: visible;
+}
+
+/* ========================= FILTRADOR ========================= */
+aside.filtrador {
   background-color: var(--color-aside);
   width: 15%;
-  min-width: 100px;
-  padding: 20px;
+  min-width: 120px;
+  padding: 10px;
+  padding-top: 30px;
   color: white;
-  font-size: 1.2em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 1em;
+  display: block;
   flex-shrink: 0;
 }
 
-.contingut-main {
-  flex-grow: 1;
-  overflow-y: auto;
-  padding: 10px;
+aside.filtrador h3 {
+  padding-top: 10px;
+  color: white;
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  word-wrap: break-word;
 }
 
+aside.filtrador .filtres-section {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+aside.filtrador .filtre-btn {
+  width: 100%;
+  padding: 8px 5px;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-align: center;
+  background-color: #c90000;
+  color: white;
+  border: 1px solid #990000;
+  border-radius: 2px;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+  white-space: normal;
+  box-shadow: none;
+}
+
+aside.filtrador .filtre-btn:hover {
+  background-color: #990000;
+  border-color: #660000;
+  transform: none;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+aside.filtrador .filtre-btn.active {
+  background-color: #4d0000;
+  color: white;
+  border: 1px solid #ffffff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  transform: none;
+}
+
+aside.filtrador .filtre-btn.active:hover {
+  background-color: #330000;
+  border-color: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  transform: none;
+}
+
+/* ========================= GRID DE FIGURAS ========================= */
 .figures {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 0.3fr));
+  gap: 20px;
   padding: 5px;
+  justify-content: start;
 }
 
 .figura {
+  height: 350px;
   background-color: var(--color-grid-item-bg);
   border-radius: 15px;
   border: 2px solid #ddd;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  min-width: 240px;
-  max-width: 350px;
-  aspect-ratio: 4/5;
   overflow: hidden;
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -275,23 +414,14 @@ main {
 }
 
 .div-figura img {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
-  transition: transform 0.3s ease, mask-image 0.3s ease,
-    -webkit-mask-image 0.3s ease;
-  mask-image: none;
-  -webkit-mask-image: none;
+  transition: transform 0.3s ease;
 }
 
 .figura > a:hover .div-figura img {
-  transform: scale(1.15);
-  mask-image: radial-gradient(ellipse at center, black 40%, transparent 95%);
-  -webkit-mask-image: radial-gradient(
-    ellipse at center,
-    black 40%,
-    transparent 95%
-  );
+  transform: scale(1.1);
 }
 
 .nom-figura {
@@ -303,19 +433,20 @@ main {
   font-weight: 600;
   letter-spacing: 0.3px;
   border-top: 1px solid #eee;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .figura > a:hover .nom-figura {
   color: #3498db;
 }
 
-/* === PÁGINA DE PRODUCTO === */
+/* ========================= PÁGINA DE PRODUCTO ========================= */
 .contingut-main-producte {
   display: flex;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding: 20px 100px;
   gap: 20px;
   max-width: 1600px;
   margin: 0 auto;
@@ -363,42 +494,9 @@ main {
   text-decoration: none;
 }
 
-.boton-comprar .btn-comprar:hover {
-  background: rgb(0, 90, 0);
-}
-
+.boton-comprar .btn-comprar:hover,
 .boton-comprar button:hover {
   background: rgb(0, 90, 0);
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-table td,
-table th {
-  border: 1px solid #ddd;
-}
-
-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-table th {
-  background-color: #f4f4f4;
-  font-weight: bold;
-}
-
-table tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-table tr:hover {
-  background-color: #eaeaea;
 }
 
 .info_producte {
@@ -420,7 +518,6 @@ table tr:hover {
   font-weight: 600;
   color: #333;
   letter-spacing: 1px;
-  margin-bottom: 5px;
 }
 
 .info_producte h2 {
@@ -463,42 +560,34 @@ table tr:hover {
   margin-bottom: 15px;
 }
 
-h2 {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: #444;
-  text-align: center;
-  margin: 15px 0;
-  letter-spacing: 0.5px;
+/* ========================= TABLAS ========================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
-/* === RESPONSIVE === */
-@media (max-width: 1200px) {
-  .contingut-main-producte {
-    flex-direction: column;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .contingut-main-producte section.imatge_producte,
-  .imatge_producte .img-container {
-    height: 500px;
-    width: 100%;
-    max-width: 600px;
-    padding: 20px;
-    margin: 0 auto;
-  }
-
-  .img-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
+table td,
+table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
 }
 
-/* === RESPONSIVE === */
-/* Estilo general del formulario */
+table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tr:hover {
+  background-color: #eaeaea;
+}
+
+/* ========================= FORMULARIO ========================= */
 #formulari {
   max-width: 420px;
   margin: 40px auto;
@@ -509,7 +598,6 @@ h2 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-/* Etiquetas */
 #formulari label,
 #formulari p {
   display: block;
@@ -519,39 +607,10 @@ h2 {
   color: #333;
 }
 
-/* Inputs */
 #formulari input[type="text"],
 #formulari input[type="number"],
 #formulari input[type="email"],
-#formulari input[type="tel"] {
-  width: 100%;
-  padding: 8px 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-  box-sizing: border-box;
-}
-
-/* Efecto al enfocar */
-#formulari input:focus {
-  outline: none;
-  border-color: #4a90e2;
-}
-
-/* Tabla de radios */
-#formulari table {
-  margin-top: 6px;
-}
-
-#formulari td {
-  padding-right: 16px;
-}
-
-/* Radios */
-#formulari input[type="radio"] {
-  margin-right: 6px;
-}
-
+#formulari input[type="tel"],
 #formulari select,
 #formulari textarea {
   width: 100%;
@@ -561,6 +620,24 @@ h2 {
   font-size: 14px;
   box-sizing: border-box;
 }
+
+#formulari input:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+#formulari table {
+  margin-top: 6px;
+}
+
+#formulari td {
+  padding-right: 16px;
+}
+
+#formulari input[type="radio"] {
+  margin-right: 6px;
+}
+
 #formulari .btn-enviar {
   margin-top: 20px;
   width: 100%;
@@ -578,14 +655,13 @@ h2 {
 #formulari .btn-enviar:hover {
   background-color: #357abd;
 }
-/* Contenedor de género */
+
 #formulari .genere-opcions {
   display: flex;
   gap: 20px;
   margin-top: 8px;
 }
 
-/* Cada opción */
 #formulari .genere-opcions label {
   display: flex;
   align-items: center;
@@ -594,29 +670,26 @@ h2 {
   cursor: pointer;
 }
 
-/* === FOOTER COMPLETO === */
-
-/* Estilo que ya tenías, pero le añadimos Flexbox para la distribución */
+/* ========================= FOOTER ========================= */
 .main-footer {
-  background-color: var(--color-footer); /* Amarillo de tu variable */
-  color: #333; /* Color de texto oscuro para el contraste */
+  background-color: var(--color-footer);
+  color: #333;
   flex-shrink: 0;
-  padding: 20px 0 0; /* Padding solo arriba */
+  padding: 20px 0 0;
 }
 
-/* Contenedor principal de las secciones */
 .footer-content {
   display: flex;
-  justify-content: space-around; /* Distribuye el espacio entre las columnas */
-  flex-wrap: wrap; /* Permite que las columnas bajen en pantallas pequeñas */
+  justify-content: space-around;
+  flex-wrap: wrap;
   max-width: 1200px;
-  margin: 0 auto; /* Centra el contenido */
+  margin: 0 auto;
   padding: 10px 20px 30px;
 }
 
 .footer-section {
-  flex-basis: 22%; /* Cada sección ocupa aproximadamente 1/4 del ancho */
-  min-width: 200px; /* Asegura que no se hagan demasiado pequeñas */
+  flex-basis: 22%;
+  min-width: 200px;
   margin-bottom: 20px;
 }
 
@@ -624,8 +697,8 @@ h2 {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 15px;
-  color: #222; /* Un color más oscuro para los títulos */
-  text-align: left; /* Alinea los títulos a la izquierda */
+  color: #222;
+  text-align: left;
 }
 
 .footer-section p,
@@ -675,6 +748,157 @@ h2 {
   color: #222;
 }
 
+/* ========================= ANIMACIONES ========================= */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================= RESPONSIVE 1200px ========================= */
+@media (max-width: 1200px) {
+  .contingut-main-producte {
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .contingut-main-producte section.imatge_producte,
+  .imatge_producte .img-container {
+    height: 500px;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+  .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+/* ========================= RESPONSIVE 1000px ========================= */
+@media (max-width: 1000px) {
+  main {
+    margin-top: 60px;
+  }
+
+  .filtrador {
+    margin-top: 20px;
+  }
+
+  header.capçalera {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px;
+  }
+
+  header.capçalera .logo {
+    height: 50px;
+    width: auto;
+  }
+
+  header.capçalera .menu-toggle {
+    display: block;
+  }
+
+  header.capçalera .nav-div {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 10px;
+    animation: slideDown 0.3s ease;
+    box-sizing: border-box;
+  }
+
+  header.capçalera .nav-div.open {
+    display: flex;
+  }
+
+  header.capçalera .nav-nav {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  header.capçalera .nav-nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  header.capçalera .nav-nav li {
+    width: 100%;
+  }
+
+  header.capçalera .nav-nav li a {
+    width: 100%;
+    display: block;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 0;
+  }
+
+  header.capçalera .buscador {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    box-sizing: border-box;
+  }
+
+  header.capçalera .buscador input {
+    flex: 5;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  header.capçalera .buscador button {
+    flex: 1;
+    box-sizing: border-box;
+  }
+}
+
+/* ========================= RESPONSIVE 900px ========================= */
+@media (max-width: 900px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  header.capçalera h1 {
+    font-size: 1.3em;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  .hero button,
+  .sobre-nosaltres button {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+/* ========================= RESPONSIVE 800px ========================= */
 @media (max-width: 800px) {
   .footer-content {
     justify-content: flex-start;

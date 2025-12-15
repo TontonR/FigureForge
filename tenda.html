@@ -3,12 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Página Principal</title>
+    <title>Tenda</title>
     <link rel="stylesheet" href="estils.css" />
   </head>
   <body>
     <header class="capçalera">
       <img src="FigureForgeText.png" alt="Logo Figure Forge" class="logo" />
+
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <div class="nav-div">
         <nav class="nav-nav">
           <ul>
@@ -17,6 +24,7 @@
             <li><a href="contactar.html">Contactar</a></li>
           </ul>
         </nav>
+
         <div class="buscador">
           <input type="search" id="search" placeholder="Buscador" />
           <button type="button">Buscar</button>
@@ -26,12 +34,46 @@
 
     <div class="content-container">
       <aside class="filtrador">
-        <p>Aside</p>
+        <h3>Anime:</h3>
+        <section class="filtres-section">
+          <button type="button" class="filtre-btn" data-filter="dragon-ball">
+            Dragon Ball
+          </button>
+          <button type="button" class="filtre-btn" data-filter="naruto">
+            Naruto
+          </button>
+          <button type="button" class="filtre-btn" data-filter="one-piece">
+            One Piece
+          </button>
+          <button type="button" class="filtre-btn" data-filter="jujutsu-kaisen">
+            Jujutsu Kaisen
+          </button>
+          <button type="button" class="filtre-btn" data-filter="demon-slayer">
+            Demon Slayer
+          </button>
+          <button type="button" class="filtre-btn" data-filter="jojos">
+            JoJo's Bizarre Adventure
+          </button>
+          <button
+            type="button"
+            class="filtre-btn"
+            data-filter="my-hero-academia"
+          >
+            My Hero Academia
+          </button>
+          <button type="button" class="filtre-btn" data-filter="black-clover">
+            Black Clover
+          </button>
+        </section>
       </aside>
 
       <main class="contingut-main">
         <section class="figures">
-          <article class="figura">
+          <article
+            class="figura"
+            data-anime="dragon-ball"
+            data-url="figures/goku.html"
+          >
             <a href="figures/goku.html">
               <div class="div-figura">
                 <img src="figures/goku.jpg" alt="Producto 1" />
@@ -39,136 +81,148 @@
               <div class="nom-figura">Goku Superguerrer</div>
             </a>
           </article>
-          <article class="figura">
-            <a href="#producto2">
+          <article
+            class="figura"
+            data-anime="dragon-ball"
+            data-url="figures/vegeta.html"
+          >
+            <a href="figures/vegeta.html">
               <div class="div-figura">
                 <img src="figures/vegeta.jpg" alt="Producto 2" />
               </div>
               <div class="nom-figura">Vegeta</div>
             </a>
           </article>
-          <article class="figura">
-            <a href="#producto3">
+          <article
+            class="figura"
+            data-anime="dragon-ball"
+            data-url="figures/corpetit.html"
+          >
+            <a href="figures/corpetit.html">
               <div class="div-figura">
                 <img src="figures/corpetit.jpg" alt="Producto 3" />
               </div>
               <div class="nom-figura">Corpetit</div>
             </a>
           </article>
-          <article class="figura">
-            <a href="#producto4">
+          <article
+            class="figura"
+            data-anime="dragon-ball"
+            data-url="figures/freezer.html"
+          >
+            <a href="figures/freezer.html">
               <div class="div-figura">
                 <img src="figures/freezer.jpg" alt="Producto 4" />
               </div>
               <div class="nom-figura">Freezer forma final</div>
             </a>
           </article>
-          <article class="figura">
-            <a href="#producto5">
+          <article class="figura" data-anime="naruto">
+            <a href="figures/naruto.html">
               <div class="div-figura">
                 <img src="figures/naruto-shippuden.jpg" alt="Producto 5" />
               </div>
               <div class="nom-figura">Naruto Uzumaki</div>
             </a>
           </article>
-          <article class="figura">
-            <a href="#producto6">
+          <article class="figura" data-anime="naruto">
+            <a href="figures/sasuke.html">
               <div class="div-figura">
                 <img src="figures/sasuke.jpg" alt="Producto 6" />
               </div>
               <div class="nom-figura">Sasuke Uchiha</div>
             </a>
           </article>
-          <article class="figura">
-            <a href="#producto7">
+          <article class="figura" data-anime="naruto">
+            <a href="figures/kakashi.html">
               <div class="div-figura">
                 <img src="figures/kakashi.jpg" alt="Producto 7" />
               </div>
               <div class="nom-figura">Kakashi Hatake</div>
             </a>
           </article>
-          <article class="figura">
-            <a href="#producto8">
+          <article class="figura" data-anime="naruto">
+            <a href="figures/sakura.html">
               <div class="div-figura">
                 <img src="figures/sakura.jpg" alt="Producto 8" />
               </div>
               <div class="nom-figura">Sakura Haruno</div>
             </a>
           </article>
-          <article class="figura">
-            <a href="#producto9">
+          <article class="figura" data-anime="one-piece">
+            <a href="figures/luffy.html">
               <div class="div-figura">
                 <img src="figures/luffy.jpg" alt="Producto 9" />
               </div>
               <div class="nom-figura">Monky D Luffy</div>
             </a>
           </article>
-          <article class="figura">
-            <a href="#producto10">
+          <article class="figura" data-anime="one-piece">
+            <a href="figures/zoro.html">
               <div class="div-figura">
                 <img src="figures/zoro.jpg" alt="Producto 10" />
               </div>
               <div class="nom-figura">Roronoa Zoro</div>
             </a>
           </article>
-          <article class="figura">
-            <a href="#producto11">
+          <article class="figura" data-anime="jujutsu-kaisen">
+            <a href="figures/itadori.html">
               <div class="div-figura">
                 <img src="figures/itadori.jpg" alt="Producto 11" />
               </div>
               <div class="nom-figura">Yuji Itadori</div>
             </a>
           </article>
-          <article class="figura">
-            <a href="#producto12">
+          <article class="figura" data-anime="jujutsu-kaisen">
+            <a href="figures/gojo.html">
               <div class="div-figura">
                 <img src="figures/gojo.jpg" alt="Producto 12" />
               </div>
               <div class="nom-figura">Satoru Gojo</div>
             </a>
           </article>
-          <article class="figura">
-            <a href="#producto13">
+          <article class="figura" data-anime="demon-slayer">
+            <a href="figures/tanjiro.html">
               <div class="div-figura">
                 <img src="figures/tanjiro.jpg" alt="Producto 13" />
               </div>
               <div class="nom-figura">Tanjiro Kamado</div>
             </a>
           </article>
-          <article class="figura">
-            <a href="#producto14">
+          <article class="figura" data-anime="demon-slayer">
+            <a href="figures/rengoku.html">
               <div class="div-figura">
                 <img src="figures/rengoku.jpg" alt="Producto 14" />
               </div>
               <div class="nom-figura">Kyojuro Rengoku</div>
             </a>
           </article>
-          <article class="figura">
-            <a href="#producto15">
+          <article class="figura" data-anime="jojos">
+            <a href="figures/jotaro.html">
               <div class="div-figura">
                 <img src="figures/jotaro.jpg" alt="Producto 15" />
               </div>
               <div class="nom-figura">Jotaro Kujo</div>
             </a>
           </article>
-          <article class="figura">
-            <a href="#producto16">
+          <article class="figura" data-anime="jojos">
+            <a href="figures/dio.html">
               <div class="div-figura">
                 <img src="figures/dio.jpg" alt="Producto 16" />
               </div>
               <div class="nom-figura">Dio Brando</div>
             </a>
           </article>
-          <article class="figura">
-            <a href="#producto17">
+          <article class="figura" data-anime="my-hero-academia">
+            <a href="figures/izuku.html">
               <div class="div-figura">
                 <img src="figures/deku.jpg" alt="Producto 17" />
               </div>
               <div class="nom-figura">Izuku Midoriya</div>
             </a>
           </article>
-          <article class="figura">
-            <a href="#producto18">
+          <article class="figura" data-anime="black-clover">
+            <a href="figures/itadori.html">
               <div class="div-figura">
                 <img src="figures/asta.jpg" alt="Producto 18" />
               </div>
@@ -230,3 +284,136 @@
     </footer>
   </body>
 </html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    /* =========================
+     MENÚ HAMBURGUESA
+  ========================= */
+    const toggle = document.querySelector(".menu-toggle");
+    const navDiv = document.querySelector(".nav-div");
+
+    if (toggle && navDiv) {
+      toggle.addEventListener("click", () => {
+        toggle.classList.toggle("open");
+        navDiv.classList.toggle("open");
+      });
+    }
+
+    /* =========================
+     FILTROS + BUSCADOR EN TIEMPO REAL
+  ========================= */
+    const filterButtons = document.querySelectorAll(".filtre-btn");
+    const figures = document.querySelectorAll(".figura");
+    const searchInput = document.getElementById("search");
+
+    function applyFilters() {
+      const activeFilters = Array.from(
+        document.querySelectorAll(".filtre-btn.active")
+      ).map((btn) => btn.dataset.filter);
+
+      const searchText = searchInput.value.toLowerCase().trim();
+
+      figures.forEach((figure) => {
+        const anime = figure.dataset.anime;
+        const name = figure
+          .querySelector(".nom-figura")
+          .textContent.toLowerCase();
+
+        const matchesAnime =
+          activeFilters.length === 0 || activeFilters.includes(anime);
+
+        const matchesSearch = searchText === "" || name.includes(searchText);
+
+        figure.style.display = matchesAnime && matchesSearch ? "block" : "none";
+      });
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        button.classList.toggle("active");
+        applyFilters();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener("input", applyFilters);
+    }
+
+    applyFilters();
+
+    /* =========================
+     BUSCADOR CON REDIRECCIÓN
+  ========================= */
+    const searchButton = document.querySelector(".buscador button");
+
+    if (searchButton && searchInput) {
+      searchButton.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const searchText = searchInput.value.toLowerCase().trim();
+        if (!searchText) return;
+
+        const matches = [];
+
+        figures.forEach((figure) => {
+          const name = figure
+            .querySelector(".nom-figura")
+            .textContent.toLowerCase();
+
+          if (name.includes(searchText)) {
+            matches.push({
+              name: figure.querySelector(".nom-figura").textContent,
+              url: figure.dataset.url || "#",
+            });
+          }
+        });
+
+        if (matches.length === 1) {
+          window.location.href = matches[0].url;
+          return;
+        }
+
+        let notif = document.querySelector(".search-notif");
+        if (!notif) {
+          notif = document.createElement("div");
+          notif.className = "search-notif";
+          notif.style.position = "absolute";
+          notif.style.top = "calc(100% + 5px)";
+          notif.style.left = "0";
+          notif.style.width = "100%";
+          notif.style.background = "#fff";
+          notif.style.border = "1px solid #ccc";
+          notif.style.borderRadius = "8px";
+          notif.style.padding = "10px";
+          notif.style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)";
+          notif.style.zIndex = "10000";
+          searchButton.parentElement.appendChild(notif);
+        }
+
+        notif.innerHTML = "";
+
+        if (matches.length === 0) {
+          notif.textContent = `No s'ha trobat cap resultat per "${searchText}"`;
+        } else {
+          notif.innerHTML =
+            "<strong>S'han trobat múltiples resultats:</strong><br>";
+          matches.forEach((match) => {
+            const a = document.createElement("a");
+            a.href = match.url;
+            a.textContent = match.name;
+            a.style.display = "block";
+            a.style.marginTop = "5px";
+            a.style.color = "#007BFF";
+            a.style.textDecoration = "underline";
+            notif.appendChild(a);
+          });
+        }
+
+        setTimeout(() => {
+          notif.remove();
+        }, 6000);
+      });
+    }
+  });
+</script>
