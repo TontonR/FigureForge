@@ -4,8 +4,7 @@
   --color-nav-search-bg: #e67e22;
   --color-nav-bg: #e74c3c;
   --color-search-bg: #f5b7b1;
-  --color-aside: #db3434;
-  --color-main-bg: #ffddb6;
+  --color-aside: #e8e8e8;
   --color-grid-item-bg: #ffffff;
   --color-name-bg: #ffffff;
   --color-footer: #ee573c;
@@ -27,6 +26,7 @@ body {
   flex-direction: column;
   padding-top: 70px;
   position: relative;
+  background-image: url(fondo.png);
 }
 
 /* ========================= TIPOGRAFÍA ========================= */
