@@ -4,7 +4,7 @@
   --color-nav-search-bg: #e67e22;
   --color-nav-bg: #e74c3c;
   --color-search-bg: #f5b7b1;
-  --color-aside: #e8e8e8;
+  --color-aside: #bdbdbd;
   --color-grid-item-bg: #ffffff;
   --color-name-bg: #ffffff;
   --color-footer: #ee573c;
@@ -60,6 +60,7 @@ p {
 }
 
 /* ========================= HEADER ========================= */
+
 header.capçalera {
   background-color: var(--color-header);
   color: white;
@@ -77,8 +78,15 @@ header.capçalera {
   box-sizing: border-box;
 }
 
-header.capçalera .logo {
+header.capçalera a {
+  display: flex;
+  align-items: center;
   height: 100%;
+}
+
+header.capçalera .logo {
+  display: block;
+  max-height: 50px;
   width: auto;
   object-fit: contain;
   margin: 0;
@@ -96,7 +104,6 @@ header.capçalera h1 {
   text-align: left;
   line-height: normal;
 }
-
 /* ========================= NAVEGACIÓN ========================= */
 header.capçalera .nav-div {
   display: flex;
@@ -298,7 +305,7 @@ aside.filtrador {
   min-width: 120px;
   padding: 10px;
   padding-top: 30px;
-  color: white;
+  color: black;
   font-size: 1em;
   display: block;
   flex-shrink: 0;
@@ -306,13 +313,13 @@ aside.filtrador {
 
 aside.filtrador h3 {
   padding-top: 10px;
-  color: white;
+  color: black;
   font-size: 1.1em;
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 10px;
   padding-bottom: 5px;
-  border-bottom: 2px solid #ffffff;
+  border-bottom: 2px solid black;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   line-height: 1.2;
@@ -331,9 +338,9 @@ aside.filtrador .filtre-btn {
   font-size: 0.9em;
   font-weight: bold;
   text-align: center;
-  background-color: #c90000;
-  color: white;
-  border: 1px solid #990000;
+  background-color: #dadada;
+  color: black;
+  border: 0px solid #080808;
   border-radius: 2px;
   transition: all 0.1s ease-in-out;
   cursor: pointer;
@@ -342,15 +349,13 @@ aside.filtrador .filtre-btn {
 }
 
 aside.filtrador .filtre-btn:hover {
-  background-color: #990000;
-  border-color: #660000;
+  background-color: #f5f5f5;
   transform: none;
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-  color: white;
 }
 
 aside.filtrador .filtre-btn.active {
-  background-color: #4d0000;
+  background-color: #919296;
   color: white;
   border: 1px solid #ffffff;
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
@@ -358,7 +363,7 @@ aside.filtrador .filtre-btn.active {
 }
 
 aside.filtrador .filtre-btn.active:hover {
-  background-color: #330000;
+  background-color: #7a8b9e;
   border-color: #ffffff;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
   transform: none;
@@ -467,6 +472,7 @@ aside.filtrador .filtre-btn.active:hover {
   width: 100%;
   height: 70vh;
   border: 1px solid black;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -579,12 +585,11 @@ table th {
   font-weight: bold;
 }
 
+table tr {
+  background-color: #eaeaea;
+}
 table tr:nth-child(even) {
   background-color: #f9f9f9;
-}
-
-table tr:hover {
-  background-color: #eaeaea;
 }
 
 /* ========================= FORMULARIO ========================= */
@@ -730,14 +735,22 @@ table tr:hover {
   color: #e74c3c;
 }
 
-.social-icons a {
-  font-size: 1.5rem;
-  margin-right: 15px;
-  color: #222;
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.social-icons a:hover {
-  color: var(--color-nav-bg);
+.social-icons img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.2);
 }
 
 .footer-bottom {
