@@ -8,8 +8,9 @@
   </head>
   <body>
     <header class="capçalera">
-      <img src="FigureForgeText.png" alt="Logo Figure Forge" class="logo" />
-
+      <a href="pagina-principal.html">
+        <img src="FigureForgeText.png" alt="Logo Figure Forge" class="logo" />
+      </a>
       <button class="menu-toggle" aria-label="Abrir menú">
         <span></span>
         <span></span>
@@ -34,7 +35,7 @@
 
     <div class="content-container">
       <aside class="filtrador">
-        <h3>Anime:</h3>
+        <h3>Anime</h3>
         <section class="filtres-section">
           <button type="button" class="filtre-btn" data-filter="dragon-ball">
             Dragon Ball
@@ -65,13 +66,47 @@
             Black Clover
           </button>
         </section>
+        <h3>Marca</h3>
+        <section class="filtres-section">
+          <button type="button" class="filtre-btn" data-filter="banpresto">
+            Banpresto
+          </button>
+          <button type="button" class="filtre-btn" data-filter="sh-figuarts">
+            SH-Figuarts
+          </button>
+          <button type="button" class="filtre-btn" data-filter="xinchangda">
+            Xinchangda
+          </button>
+          <button type="button" class="filtre-btn" data-filter="megahouse">
+            MegaHouse
+          </button>
+          <button type="button" class="filtre-btn" data-filter="tamashii">
+            Tamashii Nations
+          </button>
+          <button type="button" class="filtre-btn" data-filter="yleafun">
+            Yleafun
+          </button>
+          <button type="button" class="filtre-btn" data-filter="zhongkaihua">
+            Zhongkaihua
+          </button>
+          <button type="button" class="filtre-btn" data-filter="good-smile">
+            Good Smile
+          </button>
+        </section>
+        <h3>Articulable</h3>
+        <section class="filtres-section">
+          <button type="button" class="filtre-btn" data-filter="articulable">
+            Articulable
+          </button>
+        </section>
       </aside>
 
       <main class="contingut-main">
         <section class="figures">
+          <!-- Dragon Ball -->
           <article
             class="figura"
-            data-anime="dragon-ball"
+            data-tags="dragon-ball, banpresto"
             data-url="figures/goku.html"
           >
             <a href="figures/goku.html">
@@ -81,9 +116,10 @@
               <div class="nom-figura">Goku Superguerrer</div>
             </a>
           </article>
+
           <article
             class="figura"
-            data-anime="dragon-ball"
+            data-tags="dragon-ball, banpresto"
             data-url="figures/vegeta.html"
           >
             <a href="figures/vegeta.html">
@@ -95,7 +131,7 @@
           </article>
           <article
             class="figura"
-            data-anime="dragon-ball"
+            data-tags="dragon-ball, sh-figuarts, articulable"
             data-url="figures/corpetit.html"
           >
             <a href="figures/corpetit.html">
@@ -105,9 +141,10 @@
               <div class="nom-figura">Corpetit</div>
             </a>
           </article>
+
           <article
             class="figura"
-            data-anime="dragon-ball"
+            data-tags="dragon-ball, sh-figuarts, articulable"
             data-url="figures/freezer.html"
           >
             <a href="figures/freezer.html">
@@ -117,9 +154,11 @@
               <div class="nom-figura">Freezer forma final</div>
             </a>
           </article>
+
+          <!-- Naruto -->
           <article
             class="figura"
-            data-anime="naruto"
+            data-tags="naruto, banpresto"
             data-url="figures/naruto.html"
           >
             <a href="figures/naruto.html">
@@ -129,9 +168,10 @@
               <div class="nom-figura">Naruto Uzumaki</div>
             </a>
           </article>
+
           <article
             class="figura"
-            data-anime="naruto"
+            data-tags="naruto, sh-figuarts, articulable"
             data-url="figures/sasuke.html"
           >
             <a href="figures/sasuke.html">
@@ -141,9 +181,10 @@
               <div class="nom-figura">Sasuke Uchiha</div>
             </a>
           </article>
+
           <article
             class="figura"
-            data-anime="naruto"
+            data-tags="naruto, sh-figuarts, articulable"
             data-url="figures/kakashi.html"
           >
             <a href="figures/kakashi.html">
@@ -153,9 +194,10 @@
               <div class="nom-figura">Kakashi Hatake</div>
             </a>
           </article>
+
           <article
             class="figura"
-            data-anime="naruto"
+            data-tags="naruto, megahouse"
             data-url="figures/sakura.html"
           >
             <a href="figures/sakura.html">
@@ -165,9 +207,11 @@
               <div class="nom-figura">Sakura Haruno</div>
             </a>
           </article>
+
+          <!-- One Piece -->
           <article
             class="figura"
-            data-anime="one-piece"
+            data-tags="one-piece, banpresto"
             data-url="figures/luffy.html"
           >
             <a href="figures/luffy.html">
@@ -177,9 +221,10 @@
               <div class="nom-figura">Monky D Luffy</div>
             </a>
           </article>
+
           <article
             class="figura"
-            data-anime="one-piece"
+            data-tags="one-piece, xinchangda"
             data-url="figures/zoro.html"
           >
             <a href="figures/zoro.html">
@@ -189,9 +234,11 @@
               <div class="nom-figura">Roronoa Zoro</div>
             </a>
           </article>
+
+          <!-- Jujutsu Kaisen -->
           <article
             class="figura"
-            data-anime="jujutsu-kaisen"
+            data-tags="jujutsu-kaisen, tamashii"
             data-url="figures/itadori.html"
           >
             <a href="figures/itadori.html">
@@ -201,9 +248,10 @@
               <div class="nom-figura">Yuji Itadori</div>
             </a>
           </article>
+
           <article
             class="figura"
-            data-anime="jujutsu-kaisen"
+            data-tags="jujutsu-kaisen, xinchangda"
             data-url="figures/gojo.html"
           >
             <a href="figures/gojo.html">
@@ -213,9 +261,11 @@
               <div class="nom-figura">Satoru Gojo</div>
             </a>
           </article>
+
+          <!-- Demon Slayer -->
           <article
             class="figura"
-            data-anime="demon-slayer"
+            data-tags="demon-slayer, sega"
             data-url="figures/tanjiro.html"
           >
             <a href="figures/tanjiro.html">
@@ -225,9 +275,10 @@
               <div class="nom-figura">Tanjiro Kamado</div>
             </a>
           </article>
+
           <article
             class="figura"
-            data-anime="demon-slayer"
+            data-tags="demon-slayer, banpresto"
             data-url="figures/rengoku.html"
           >
             <a href="figures/rengoku.html">
@@ -237,9 +288,11 @@
               <div class="nom-figura">Kyojuro Rengoku</div>
             </a>
           </article>
+
+          <!-- JoJo's -->
           <article
             class="figura"
-            data-anime="jojos"
+            data-tags="jojos, yleafun, articulable"
             data-url="figures/jotaro.html"
           >
             <a href="figures/jotaro.html">
@@ -249,9 +302,10 @@
               <div class="nom-figura">Jotaro Kujo</div>
             </a>
           </article>
+
           <article
             class="figura"
-            data-anime="jojos"
+            data-tags="jojos, banpresto"
             data-url="figures/dio.html"
           >
             <a href="figures/dio.html">
@@ -261,9 +315,11 @@
               <div class="nom-figura">Dio Brando</div>
             </a>
           </article>
+
+          <!-- My Hero Academia -->
           <article
             class="figura"
-            data-anime="my-hero-academia"
+            data-tags="my-hero-academia, zhongkaihua"
             data-url="figures/izuku.html"
           >
             <a href="figures/izuku.html">
@@ -273,9 +329,11 @@
               <div class="nom-figura">Izuku Midoriya</div>
             </a>
           </article>
+
+          <!-- Black Clover -->
           <article
             class="figura"
-            data-anime="black-clover"
+            data-tags="black-clover, good-smile, articulable"
             data-url="figures/asta.html"
           >
             <a href="figures/asta.html">
