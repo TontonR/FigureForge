@@ -62,7 +62,7 @@ p {
   line-height: 1.8;
   color: #333;
   max-width: 900px;
-  margin: 0 auto 20px auto;
+  margin: 0 20px 20px 20px;
   text-align: justify;
 }
 
@@ -74,6 +74,9 @@ li {
   margin: 0 auto 20px auto;
 }
 
+img {
+  max-width: 100%;
+}
 /* ========================= HEADER ========================= */
 
 header.capçalera {
@@ -288,14 +291,18 @@ header.capçalera .menu-toggle.open span:nth-child(3) {
 /* ========================= HERO Y SOBRE NOSALTRES ========================= */
 .hero {
   background-color: var(--color-main-bg);
-  text-align: center;
-  padding: 60px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .sobre-nosaltres {
   background-color: #ffe6cc;
-  text-align: center;
-  padding: 60px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 /* ========================= CONTENIDO PRINCIPAL ========================= */
@@ -785,6 +792,12 @@ table tr:nth-child(even) {
     transform: translateY(0);
   }
 }
+/* ========================= RESPONSIVE 1300px ========================= */
+@media (max-width: 1300px) {
+  .figures {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 0.5fr));
+  }
+}
 
 /* ========================= RESPONSIVE 1200px ========================= */
 @media (max-width: 1200px) {
@@ -933,5 +946,12 @@ table tr:nth-child(even) {
 
   .footer-section {
     flex-basis: 45%;
+  }
+}
+
+/* ========================= RESPONSIVE 700px ========================= */
+@media (max-width: 700px) {
+  .figures {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
 }
