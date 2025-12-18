@@ -8,7 +8,7 @@
   </head>
   <body class="producte-page">
     <header class="capçalera">
-      <a href="pagina-principal.html">
+      <a href="index.html">
         <img src="FigureForgeText.png" alt="Logo Figure Forge" class="logo" />
       </a>
       <button class="menu-toggle" aria-label="Abrir menú">
@@ -20,7 +20,7 @@
       <div class="nav-div">
         <nav class="nav-nav">
           <ul>
-            <li><a href="pagina-principal.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="tenda.html">Tenda</a></li>
             <li><a href="contactar.html">Contactar</a></li>
           </ul>
@@ -33,83 +33,89 @@
       </div>
     </header>
     <main>
-      <h1>Contactar</h1>
-      <form id="formulari">
-        <label for="nom">Nom:</label>
-        <input type="text" id="nom" name="nom" required />
+      <section style="margin-top: 20px">
+        <h1>Contactar</h1>
+        <form id="formulari">
+          <label for="nom">Nom:</label>
+          <input type="text" id="nom" name="nom" required />
 
-        <label for="cognoms">Cognoms:</label>
-        <input type="text" id="cognoms" name="cognoms" required />
+          <label for="cognoms">Cognoms:</label>
+          <input type="text" id="cognoms" name="cognoms" required />
 
-        <label for="edat">Edat:</label>
-        <input type="number" id="edat" name="edat" min="0" />
+          <label for="edat">Edat:</label>
+          <input type="number" id="edat" name="edat" min="0" />
 
-        <p>Gènere:</p>
-        <div class="genere-opcions">
-          <label>
-            <input type="radio" name="genere" value="masculi" />
-            Masculí
-          </label>
+          <p>Gènere:</p>
+          <div class="genere-opcions">
+            <label>
+              <input type="radio" name="genere" value="masculi" />
+              Masculí
+            </label>
 
-          <label>
-            <input type="radio" name="genere" value="femeni" />
-            Femení
-          </label>
+            <label>
+              <input type="radio" name="genere" value="femeni" />
+              Femení
+            </label>
 
-          <label>
-            <input type="radio" name="genere" value="altres" />
-            Altres
-          </label>
-        </div>
+            <label>
+              <input type="radio" name="genere" value="altres" />
+              Altres
+            </label>
+          </div>
 
-        <label for="adreca">Adreça</label>
-        <input type="text" id="adreca" name="adreca" required />
+          <label for="adreca">Adreça</label>
+          <input type="text" id="adreca" name="adreca" required />
 
-        <label for="email">Correu electrònic:</label>
-        <input type="email" id="email" name="email" required />
+          <label for="email">Correu electrònic:</label>
+          <input type="email" id="email" name="email" required />
 
-        <label for="telefon">Telèfon:</label>
-        <input type="tel" id="telefon" name="telefon" pattern="[0-9]{9}" />
-        <label for="motiu">Motivo de contacto:</label>
-        <select id="motiu" name="motiu">
-          <option value="">-- Selecciona una opció --</option>
-          <option value="consulta">Consulta</option>
-          <option value="compra">Compra</option>
-        </select>
-
-        <!-- Consulta -->
-        <div id="consulta-box" style="display: none">
-          <label for="consulta-text">Escriu el motiu de la consulta:</label>
-          <textarea id="consulta-text" name="consulta-text" rows="4"></textarea>
-        </div>
-
-        <!-- Compra -->
-        <div id="compra-box" style="display: none">
-          <label for="producte">Selecciona un producte:</label>
-          <select id="producte" name="producte">
-            <option value="">-- Selecciona una figura --</option>
-            <option value="goku">Goku superguerrer</option>
-            <option value="vegeta">Vegeta</option>
-            <option value="corpetit">Corpetit</option>
-            <option value="freezer">Freezer forma final</option>
-            <option value="naruto">Naruto Uzumaki</option>
-            <option value="sasuke">Sasuke Uchiha</option>
-            <option value="kakashi">Kakashi Hatake</option>
-            <option value="sakura">Sakura Haruno</option>
-            <option value="luffy">Monky D Luffy</option>
-            <option value="zoro">Roronoa Zoro</option>
-            <option value="itadori">Yuji Itadori</option>
-            <option value="gojo">Satoru Gojo</option>
-            <option value="tanjiro">Tanjiro Kamado</option>
-            <option value="rengoku">Kyojuro Rengoku</option>
-            <option value="jotaro">Jotaro Kujo</option>
-            <option value="dio">Dio Brando</option>
-            <option value="izuku">Izuku Midoriya</option>
-            <option value="asta">Asta</option>
+          <label for="telefon">Telèfon:</label>
+          <input type="tel" id="telefon" name="telefon" pattern="[0-9]{9}" />
+          <label for="motiu">Motivo de contacto:</label>
+          <select id="motiu" name="motiu">
+            <option value="">-- Selecciona una opció --</option>
+            <option value="consulta">Consulta</option>
+            <option value="compra">Compra</option>
           </select>
-        </div>
-        <button type="submit" class="btn-enviar">Enviar</button>
-      </form>
+
+          <!-- Consulta -->
+          <div id="consulta-box" style="display: none">
+            <label for="consulta-text">Escriu el motiu de la consulta:</label>
+            <textarea
+              id="consulta-text"
+              name="consulta-text"
+              rows="4"
+            ></textarea>
+          </div>
+
+          <!-- Compra -->
+          <div id="compra-box" style="display: none">
+            <label for="producte">Selecciona un producte:</label>
+            <select id="producte" name="producte">
+              <option value="">-- Selecciona una figura --</option>
+              <option value="goku">Goku superguerrer</option>
+              <option value="vegeta">Vegeta</option>
+              <option value="corpetit">Corpetit</option>
+              <option value="freezer">Freezer forma final</option>
+              <option value="naruto">Naruto Uzumaki</option>
+              <option value="sasuke">Sasuke Uchiha</option>
+              <option value="kakashi">Kakashi Hatake</option>
+              <option value="sakura">Sakura Haruno</option>
+              <option value="luffy">Monky D Luffy</option>
+              <option value="zoro">Roronoa Zoro</option>
+              <option value="itadori">Yuji Itadori</option>
+              <option value="gojo">Satoru Gojo</option>
+              <option value="tanjiro">Tanjiro Kamado</option>
+              <option value="rengoku">Kyojuro Rengoku</option>
+              <option value="jotaro">Jotaro Kujo</option>
+              <option value="dio">Dio Brando</option>
+              <option value="izuku">Izuku Midoriya</option>
+              <option value="asta">Asta</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-enviar">Enviar</button>
+        </form>
+      </section>
     </main>
     <footer class="main-footer">
       <div class="footer-content">
