@@ -7,9 +7,14 @@
     <link rel="stylesheet" href="estils.css" />
   </head>
   <body>
+    <!-- =======================CAPÇALERA======================= -->
     <header class="capçalera">
       <a href="index.html">
-        <img src="FigureForgeText.png" alt="Logo Figure Forge" class="logo" />
+        <img
+          src="imatges/FigureForgeText.png"
+          alt="Logo Figure Forge"
+          class="logo"
+        />
       </a>
       <button class="menu-toggle" aria-label="Abrir menú">
         <span></span>
@@ -32,9 +37,12 @@
         </div>
       </div>
     </header>
-
+    <!-- ========================= CAPÇALERA ========================= -->
+    <!-- ========================= CONTINGUT PRINCIPAL ========================= -->
     <main class="contingut-main">
+      <!-- aside / filtrador -->
       <aside class="filtrador">
+        <!-- Animes -->
         <h3>Anime</h3>
         <section class="filtres-section">
           <button type="button" class="filtre-btn" data-filter="dragon-ball">
@@ -66,6 +74,7 @@
             Black Clover
           </button>
         </section>
+        <!-- Marques -->
         <h3>Marca</h3>
         <section class="filtres-section">
           <button type="button" class="filtre-btn" data-filter="banpresto">
@@ -93,6 +102,7 @@
             Good Smile
           </button>
         </section>
+        <!-- Articulabes -->
         <h3>Articulable</h3>
         <section class="filtres-section">
           <button type="button" class="filtre-btn" data-filter="articulable">
@@ -103,9 +113,10 @@
           </button>
         </section>
       </aside>
-
+      <!-- Section figures -->
       <section class="figures">
         <!-- Dragon Ball -->
+        <!-- Cada producte / figura és un article amb propietats amb dins un <a> interactuable que dins te 2 divs, un per la imatge i altra per al text-->
         <article
           class="figura"
           data-tags="dragon-ball, banpresto, no-articulable"
@@ -113,7 +124,7 @@
         >
           <a href="figures/goku.html">
             <div class="div-figura">
-              <img src="figures/goku.jpg" alt="Producto 1" />
+              <img src="figures/goku.jpg" alt="Goku Superguerrer" />
             </div>
             <div class="nom-figura">Goku Superguerrer</div>
           </a>
@@ -126,7 +137,7 @@
         >
           <a href="figures/vegeta.html">
             <div class="div-figura">
-              <img src="figures/vegeta.jpg" alt="Producto 2" />
+              <img src="figures/vegeta.jpg" alt="Vegeta" />
             </div>
             <div class="nom-figura">Vegeta</div>
           </a>
@@ -138,7 +149,7 @@
         >
           <a href="figures/corpetit.html">
             <div class="div-figura">
-              <img src="figures/corpetit.jpg" alt="Producto 3" />
+              <img src="figures/corpetit.jpg" alt="Corpetit" />
             </div>
             <div class="nom-figura">Corpetit</div>
           </a>
@@ -151,7 +162,7 @@
         >
           <a href="figures/freezer.html">
             <div class="div-figura">
-              <img src="figures/freezer.jpg" alt="Producto 4" />
+              <img src="figures/freezer.jpg" alt="Freezer forma final" />
             </div>
             <div class="nom-figura">Freezer forma final</div>
           </a>
@@ -165,7 +176,7 @@
         >
           <a href="figures/naruto.html">
             <div class="div-figura">
-              <img src="figures/naruto.jpg" alt="Producto 5" />
+              <img src="figures/naruto.jpg" alt="Naruto Uzumaki" />
             </div>
             <div class="nom-figura">Naruto Uzumaki</div>
           </a>
@@ -178,7 +189,7 @@
         >
           <a href="figures/sasuke.html">
             <div class="div-figura">
-              <img src="figures/sasuke.jpg" alt="Producto 6" />
+              <img src="figures/sasuke.jpg" alt="Sasuke Uchiha" />
             </div>
             <div class="nom-figura">Sasuke Uchiha</div>
           </a>
@@ -191,7 +202,7 @@
         >
           <a href="figures/kakashi.html">
             <div class="div-figura">
-              <img src="figures/kakashi.jpg" alt="Producto 7" />
+              <img src="figures/kakashi.jpg" alt="Kakashi Hatake" />
             </div>
             <div class="nom-figura">Kakashi Hatake</div>
           </a>
@@ -204,7 +215,7 @@
         >
           <a href="figures/sakura.html">
             <div class="div-figura">
-              <img src="figures/sakura.jpg" alt="Producto 8" />
+              <img src="figures/sakura.jpg" alt="Sakura Haruno" />
             </div>
             <div class="nom-figura">Sakura Haruno</div>
           </a>
@@ -218,7 +229,7 @@
         >
           <a href="figures/luffy.html">
             <div class="div-figura">
-              <img src="figures/luffy.jpg" alt="Producto 9" />
+              <img src="figures/luffy.jpg" alt="Monky D Luffy" />
             </div>
             <div class="nom-figura">Monky D Luffy</div>
           </a>
@@ -231,7 +242,7 @@
         >
           <a href="figures/zoro.html">
             <div class="div-figura">
-              <img src="figures/zoro.jpg" alt="Producto 10" />
+              <img src="figures/zoro.jpg" alt="Roronoa Zoro" />
             </div>
             <div class="nom-figura">Roronoa Zoro</div>
           </a>
@@ -245,7 +256,7 @@
         >
           <a href="figures/itadori.html">
             <div class="div-figura">
-              <img src="figures/itadori.jpg" alt="Producto 11" />
+              <img src="figures/itadori.jpg" alt="Yuji Itadori" />
             </div>
             <div class="nom-figura">Yuji Itadori</div>
           </a>
@@ -258,7 +269,7 @@
         >
           <a href="figures/gojo.html">
             <div class="div-figura">
-              <img src="figures/gojo.jpg" alt="Producto 12" />
+              <img src="figures/gojo.jpg" alt="Satoru Gojo" />
             </div>
             <div class="nom-figura">Satoru Gojo</div>
           </a>
@@ -272,7 +283,7 @@
         >
           <a href="figures/tanjiro.html">
             <div class="div-figura">
-              <img src="figures/tanjiro.jpg" alt="Producto 13" />
+              <img src="figures/tanjiro.jpg" alt="Tanjiro Kamado" />
             </div>
             <div class="nom-figura">Tanjiro Kamado</div>
           </a>
@@ -285,7 +296,7 @@
         >
           <a href="figures/rengoku.html">
             <div class="div-figura">
-              <img src="figures/rengoku.jpg" alt="Producto 14" />
+              <img src="figures/rengoku.jpg" alt="Kyojuro Rengoku" />
             </div>
             <div class="nom-figura">Kyojuro Rengoku</div>
           </a>
@@ -299,7 +310,7 @@
         >
           <a href="figures/jotaro.html">
             <div class="div-figura">
-              <img src="figures/jotaro.jpg" alt="Producto 15" />
+              <img src="figures/jotaro.jpg" alt="Jotaro Kujo" />
             </div>
             <div class="nom-figura">Jotaro Kujo</div>
           </a>
@@ -312,7 +323,7 @@
         >
           <a href="figures/dio.html">
             <div class="div-figura">
-              <img src="figures/dio.jpg" alt="Producto 16" />
+              <img src="figures/dio.jpg" alt="Dio Brando" />
             </div>
             <div class="nom-figura">Dio Brando</div>
           </a>
@@ -326,7 +337,7 @@
         >
           <a href="figures/izuku.html">
             <div class="div-figura">
-              <img src="figures/izuku.jpg" alt="Producto 17" />
+              <img src="figures/izuku.jpg" alt="Izuku Midoriya" />
             </div>
             <div class="nom-figura">Izuku Midoriya</div>
           </a>
@@ -340,20 +351,21 @@
         >
           <a href="figures/asta.html">
             <div class="div-figura">
-              <img src="figures/asta.jpg" alt="Producto 18" />
+              <img src="figures/asta.jpg" alt="Asta" />
             </div>
             <div class="nom-figura">Asta</div>
           </a>
         </article>
       </section>
     </main>
-
+    <!-- ========================= CONTINGUT PRINCIPAL ========================= -->
+    <!-- ========================= PEU DE PAGINA ========================= -->
     <footer class="main-footer">
       <div class="footer-content">
         <div class="footer-section contact-info">
           <h3>Figure Forge</h3>
           <p>La forja de les teves figures de col·lecció.</p>
-          <p><i class="icon fas fa-map-marker-alt"></i> Barcelona, Catalunya</p>
+          <p><i class="icon fas fa-map-marker-alt"></i> Tarragona, Catalunya</p>
           <p><i class="icon fas fa-envelope"></i> info@figureforge.cat</p>
         </div>
 
@@ -393,25 +405,27 @@
           <h3>Segueix-nos</h3>
           <div class="social-icons">
             <a href="https://www.instagram.com" aria-label="Instagram">
-              <img src="instagram.png" alt="Instagram" />
+              <img src="imatges/instagram.png" alt="Instagram" />
             </a>
             <a href="https://twitter.com" aria-label="Twitter">
-              <img src="twitter.png" alt="Twitter" />
+              <img src="imatges/twitter.png" alt="Twitter" />
             </a>
             <a href="https://www.facebook.com" aria-label="Facebook">
-              <img src="facebook.png" alt="Facebook" />
+              <img src="imatges/facebook.png" alt="Facebook" />
             </a>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>2025 Figure Forge. Tots els drets reservats.</p>
+        <p>© 2025 Figure Forge. Tots els drets reservats.</p>
       </div>
     </footer>
-
-    <script src="menu.js"></script>
-    <script src="filtre.js"></script>
-    <script src="buscador.js"></script>
+    <!-- ========================= PEU DE PAGINA ========================= -->
   </body>
 </html>
+<!-- ========================= SCRIPTS ========================= -->
+<script src="scripts/buscador.js"></script>
+<script src="scripts/menu.js"></script>
+<script src="scripts/filtre.js"></script>
+<!-- ========================= SCRIPTS ========================= -->

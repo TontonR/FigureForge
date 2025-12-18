@@ -1,3 +1,4 @@
+//SCRIPT FET AMB IA
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("search");
   const searchButton = document.querySelector(".buscador button");

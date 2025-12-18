@@ -1,3 +1,4 @@
+//SCRIPT FET AMB IA
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".menu-toggle");
   const navDiv = document.querySelector(".nav-div");

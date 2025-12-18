@@ -1,3 +1,4 @@
+//SCRIPT FET AMB IA
 document.addEventListener("DOMContentLoaded", () => {
   const filterButtons = document.querySelectorAll(".filtre-btn");
   const figures = document.querySelectorAll(".figura");

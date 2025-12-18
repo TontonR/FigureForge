@@ -9,7 +9,11 @@
   <body class="producte-page">
     <header class="capçalera">
       <a href="index.html">
-        <img src="FigureForgeText.png" alt="Logo Figure Forge" class="logo" />
+        <img
+          src="imatges/FigureForgeText.png"
+          alt="Logo Figure Forge"
+          class="logo"
+        />
       </a>
       <button class="menu-toggle" aria-label="Abrir menú">
         <span></span>
@@ -122,7 +126,7 @@
         <div class="footer-section contact-info">
           <h3>Figure Forge</h3>
           <p>La forja de les teves figures de col·lecció.</p>
-          <p><i class="icon fas fa-map-marker-alt"></i> Barcelona, Catalunya</p>
+          <p><i class="icon fas fa-map-marker-alt"></i> Tarragona, Catalunya</p>
           <p><i class="icon fas fa-envelope"></i> info@figureforge.cat</p>
         </div>
 
@@ -162,52 +166,24 @@
           <h3>Segueix-nos</h3>
           <div class="social-icons">
             <a href="https://www.instagram.com" aria-label="Instagram">
-              <img src="instagram.png" alt="Instagram" />
+              <img src="imatges/instagram.png" alt="Instagram" />
             </a>
             <a href="https://twitter.com" aria-label="Twitter">
-              <img src="twitter.png" alt="Twitter" />
+              <img src="imatges/twitter.png" alt="Twitter" />
             </a>
             <a href="https://www.facebook.com" aria-label="Facebook">
-              <img src="facebook.png" alt="Facebook" />
+              <img src="imatges/facebook.png" alt="Facebook" />
             </a>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>2025 Figure Forge. Tots els drets reservats.</p>
+        <p>© 2025 Figure Forge. Tots els drets reservats.</p>
       </div>
     </footer>
   </body>
 </html>
-<script>
-  const motiu = document.getElementById("motiu");
-  const consultaBox = document.getElementById("consulta-box");
-  const compraBox = document.getElementById("compra-box");
-  const producteSelect = document.getElementById("producte");
-
-  function actualitzarVista() {
-    consultaBox.style.display = "none";
-    compraBox.style.display = "none";
-
-    if (motiu.value === "consulta") {
-      consultaBox.style.display = "block";
-    } else if (motiu.value === "compra") {
-      compraBox.style.display = "block";
-    }
-  }
-
-  motiu.addEventListener("change", actualitzarVista);
-
-  // --- Cargar producto desde la URL ---
-  const params = new URLSearchParams(window.location.search);
-  const producteURL = params.get("producte");
-
-  if (producteURL) {
-    motiu.value = "compra";
-    actualitzarVista();
-    producteSelect.value = producteURL;
-  }
-</script>
-<script src="buscador.js"></script>
-<script src="menu.js"></script>
+<script src="scripts/buscador.js"></script>
+<script src="scripts/menu.js"></script>
+<script src="scripts/contacte.js"></script>
